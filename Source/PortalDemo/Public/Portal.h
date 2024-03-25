@@ -29,6 +29,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (UIMin = "0.1", UIMax = "5", ClampMin = "0.1", ClampMax = "5"))
 	double ScreenQuality = 1.0;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	USceneComponent* BackFacingScene = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	USceneCaptureComponent2D* SceneCapture = nullptr;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UStaticMeshComponent* Screen = nullptr;
@@ -39,6 +42,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	APortal* LinkedPortal = nullptr;
 
+	APlayerCameraManager* RuntimePlayerCameraManager = nullptr;
 	UTextureRenderTarget2D* RuntimeSceneCaptureTarget = nullptr;
 	UMaterialInstanceDynamic* RuntimeScreenMaterial = nullptr;
 
